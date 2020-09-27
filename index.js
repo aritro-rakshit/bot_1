@@ -11,7 +11,7 @@ client.once('ready', () => {
 });
 
 // login to Discord with your app's token
-client.login('process.env.token');
+client.login('NzU3ODE3MzQxMTk4MzM2MDgz.X2l6ZQ.eiEp4PFqdfkcE5cAyErav3879aE');
 
 client.on('message', message => {
     console.log(message.content);
