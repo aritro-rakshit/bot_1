@@ -11,7 +11,6 @@ client.once('ready', () => {
 client.login('NzU3ODE3MzQxMTk4MzM2MDgz.X2l6ZQ.eiEp4PFqdfkcE5cAyErav3879aE');
 
 client.on('message', message => {
-    console.log(message.content);
     if (message.content === '!AA') {
        
         message.channel.send('boring');
