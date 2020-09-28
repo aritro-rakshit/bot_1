@@ -64,7 +64,7 @@ client.on('message', message => {
         message.channel.send('Available commands: !AA, !RB, !SS, !JGD, !SD, !RANA, !SM, !KG, !AN, !DD, !CIA');
     }
     if (message.content === '!cat') {
-        const { file } = await fetch('https://aws.random.cat/meow').then(response => response.json());
+        const { file } = fetch('https://aws.random.cat/meow').then(response => response.json());
     
         message.channel.send(file);
     }
