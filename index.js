@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
-const fetch = require('node-fetch');
+var pixabay = require("pixabay-api");
+var key = "18488703-34fe1bdd082710d3d75aac3b9";
 
 const client = new Discord.Client();
 
@@ -63,9 +64,13 @@ client.on('message', message => {
         
         message.channel.send('Available commands: !AA, !RB, !SS, !JGD, !SD, !RANA, !SM, !KG, !AN, !DD, !CIA');
     }
-    if (message.content === '!cat') {
-        const { file } = fetch('https://aws.random.cat/meow').then(response => response.json());
-    
-        message.channel.send(file);
-    }
+    if (message.content === '!puppy'){
+    pixabay.searchImages(key, 'puppy').then((r) => {
+        //create embed
+         message.reply(new Discord.MessageEmbed()
+             .setTitle("Here is a gift from aritro")
+             //get random puppy image from response
+             .setImage(r.hits[Math.floor(Math.random() * r.hits.length)].largeImageURL))
+ })
+}
 });
