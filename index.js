@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-
+const fetch = require('node-fetch');
 
 const client = new Discord.Client();
 
@@ -62,5 +62,10 @@ client.on('message', message => {
     if (message.content === '!sxc_helpline') {
         
         message.channel.send('Available commands: !AA, !RB, !SS, !JGD, !SD, !RANA, !SM, !KG, !AN, !DD, !CIA');
+    }
+    if (message.content === '!cat') {
+        const { file } = await fetch('https://aws.random.cat/meow').then(response => response.json());
+    
+        message.channel.send(file);
     }
 });
