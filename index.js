@@ -1,13 +1,14 @@
 const Discord = require('discord.js');
 var pixabay = require("pixabay-api");
+const fs = require('fs');  //require file system module to access routine JSON file
 var key = "18488703-34fe1bdd082710d3d75aac3b9";
 
 const client = new Discord.Client();
 
-
 client.once('ready', () => {
 	console.log('Ready!');
 });
+
 
 client.login('NzU3ODE3MzQxMTk4MzM2MDgz.X2l6ZQ.eiEp4PFqdfkcE5cAyErav3879aE');
 
@@ -138,4 +139,25 @@ client.on('message', message => {
              .setImage(r.hits[Math.floor(Math.random() * r.hits.length)].largeImageURL))
  })
 }
+    if (message.content === '!routine full') {
+        fs.readFile('routine.json', (err, data) => {
+            if (err) message.channel.send('Some unexpected error occured');
+            let fullRoutine = JSON.parse(data);
+            let daysRoutine = fullRoutine.byDay;
+            for (let i = 0; i < 7; i++) { 
+                let daysClasses = daysRoutine[i].classes;
+                message.channel.send(`Day :  ${daysRoutine[i].dayString}`);
+                if (daysRoutine[i].isOffDay) {
+                    message.channel.send("\tOff day");
+                    continue;
+                }
+                for (let j = 0; j < daysClasses.length; j++) {
+                    message.channel.send(`\tProfessor Code : ${daysClasses[j].profCode}`);
+                    message.channel.send(`\tTime Slot : ${daysClasses[j].startTime} - ${daysClasses[j].endTime}`);
+                    message.channel.send(`\tPaper Code : ${daysClasses[j].paperCode}`);
+                    message.channel.send("\t------------------------------------------------------------------");
+                }
+            }
+        });
+    }
 });

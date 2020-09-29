@@ -1,0 +1,138 @@
+{
+    "byDay" : [
+        {
+            "dayString" : "Monday",
+            "isOffDay" : false,
+            "classes" : [{"profCode" : "JGD",
+                        "startTime" : "10:00 AM",
+                        "endTime" : "10:40 AM",
+                        "paperCode" : "CMSM4321"
+                        },
+
+                        {"profCode" : "AA",
+                        "startTime" : "11:00 AM",
+                        "endTime" : "11:40 AM",
+                        "paperCode" : "CMSM4322"
+                        },
+
+                        {"profCode" : "SS",
+                        "startTime" : "12:00 PM",
+                        "endTime" : "12:40 PM",
+                        "paperCode" : "CMSM4323"
+                        },
+
+                        {"profCode" : "AN",
+                        "startTime" : "02:00 PM",
+                        "endTime" : "02:40 AM",
+                        "paperCode" : "CMSM4321"
+                        }]
+        },
+        {
+            "dayString" : "Tuesday",
+            "isOffDay" : false,
+            "classes" : [{"profCode" : "SS",
+                        "startTime" : "11:00 AM",
+                        "endTime" : "11:40 AM",
+                        "paperCode" : "CMSM4323"
+                        },
+
+                        {"profCode" : "AN",
+                        "startTime" : "12:00 PM",
+                        "endTime" : "12:40 PM",
+                        "paperCode" : "CMSM4321"
+                        },
+
+                        {"profCode" : "RB",
+                        "startTime" : "02:00 PM",
+                        "endTime" : "02:40 PM",
+                        "paperCode" : "CMSM4324"
+                        }]
+        },
+        {
+            "dayString" : "Wednesday",
+            "isOffDay" : true,
+            "classes" : []
+        },
+        {
+            "dayString" : "Thursday",
+            "isOffDay" : false,
+            "classes" : [{"profCode" : "AA",
+                        "startTime" : "10:00 AM",
+                        "endTime" : "10:40 AM",
+                        "paperCode" : "CMSM4322"
+                        },
+
+                        {"profCode" : "SS,JGD",
+                        "startTime" : "11:00 AM",
+                        "endTime" : "12:40 PM",
+                        "paperCode" : "CMSM4356"
+                        },
+
+                        {"profCode" : "SS",
+                        "startTime" : "02:00 PM",
+                        "endTime" : "02:40 PM",
+                        "paperCode" : "CMSM4323"
+                        },
+
+                        {"profCode" : "DD",
+                        "startTime" : "03:00 PM",
+                        "endTime" : "03:40 AM",
+                        "paperCode" : "CMSM4324"
+                        }]
+        },
+        {
+            "dayString" : "Friday",
+            "isOffDay" : false,
+            "classes" : [{"profCode" : "SM,KG",
+                        "startTime" : "10:00 AM",
+                        "endTime" : "11:40 AM",
+                        "paperCode" : "CMSM4356"
+                        },
+
+                        {"profCode" : "JGD",
+                        "startTime" : "12:00 PM",
+                        "endTime" : "12:40 PM",
+                        "paperCode" : "CMSM4321"
+                        },
+
+                        {"profCode" : "AA",
+                        "startTime" : "02:00 PM",
+                        "endTime" : "02:40 PM",
+                        "paperCode" : "CMSM4322"
+                        }]
+
+        },
+        {
+            "dayString" : "Saturday",
+            "isOffDay" : false,
+            "classes" : [{"profCode" : "AA",
+                        "startTime" : "10:00 AM",
+                        "endTime" : "10:40 AM",
+                        "paperCode" : "CMSM4322"
+                        },
+
+                        {"profCode" : "RB",
+                        "startTime" : "11:00 AM",
+                        "endTime" : "11:40 AM",
+                        "paperCode" : "CMSM4324"
+                        },
+
+                        {"profCode" : "SS",
+                        "startTime" : "12:00 PM",
+                        "endTime" : "12:40 PM",
+                        "paperCode" : "CMSM4323"
+                        },
+
+                        {"profCode" : "DD",
+                        "startTime" : "02:00 PM",
+                        "endTime" : "02:40 AM",
+                        "paperCode" : "CMSM4324"
+                        }]
+        },
+        {
+            "dayString" : "Sunday",
+            "isOffDay" : true,
+            "classes" : []
+        }
+    ]
+}
