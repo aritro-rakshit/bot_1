@@ -145,13 +145,23 @@ client.on('message', message => {
                  //get random puppy image from response
                  .setImage(r.hits[Math.floor(Math.random() * r.hits.length)].largeImageURL))
      })
-        message.channel.send('Available commands: !AA, !RB, !SS, !JGD, !SD, !RANA, !SM, !KG, !AN, !DD, !CIA, !puppy');
+        message.channel.send('Available commands: !AA, !RB, !SS, !JGD, !SD, !RANA, !SM, !KG, !AN, !DD, !CIA, !puppy, !moral');
     }
     if (message.content === '!puppy'){
     pixabay.searchImages(key, 'puppy').then((r) => {
         //create embed
          message.reply(new Discord.MessageEmbed()
              .setTitle("Here is a gift from aritro")
+             //get random puppy image from response
+             .setImage(r.hits[Math.floor(Math.random() * r.hits.length)].largeImageURL))
+ })
+}
+    if (message.content === '!moral'){
+        message.channel.send('chude chatni bekar khatni!');
+    pixabay.searchImages(key, 'hurt').then((r) => {
+        //create embed
+         message.reply(new Discord.MessageEmbed()
+             .setTitle("chude chatni bekar khatni!")
              //get random puppy image from response
              .setImage(r.hits[Math.floor(Math.random() * r.hits.length)].largeImageURL))
  })
