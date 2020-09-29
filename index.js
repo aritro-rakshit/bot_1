@@ -9,7 +9,7 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
-client.login(process.env.token);
+client.login("NzU3ODE3MzQxMTk4MzM2MDgz.X2l6ZQ.eiEp4PFqdfkcE5cAyErav3879aE");
 
 client.on('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
