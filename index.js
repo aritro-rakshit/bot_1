@@ -4,7 +4,7 @@ const fs = require('fs');  //require file system module to access routine JSON f
 var key = "18488703-34fe1bdd082710d3d75aac3b9";
 
 const client = new Discord.Client();
-
+const prefix="!"
 client.once('ready', () => {
 	console.log('Ready!');
 });
@@ -12,7 +12,7 @@ client.once('ready', () => {
 client.login('NzU3ODE3MzQxMTk4MzM2MDgz.X2l6ZQ.eiEp4PFqdfkcE5cAyErav3879aE');
 
 client.on('message', message => {
-    if (!message.content.startsWith("!") || message.author.bot) return;
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
