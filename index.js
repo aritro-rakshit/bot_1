@@ -9,7 +9,6 @@ client.once('ready', () => {
 	console.log('Ready!');
 });
 
-
 client.login('NzU3ODE3MzQxMTk4MzM2MDgz.X2l6ZQ.eiEp4PFqdfkcE5cAyErav3879aE');
 
 client.on('message', message => {
@@ -140,12 +139,12 @@ client.on('message', message => {
  })
 }
     if (message.content === '!routine') {
-        let dayOfWeek = (new Date()).getDay();
         fs.readFile('routine.json', (err, data) => {
             if (err) message.channel.send('Some unexpected error occured');
+            let dayOfWeek = (new Date()).getDay();
             let fullRoutine = JSON.parse(data);
             let daysRoutine = fullRoutine.byDay;
-            let daysClasses = daysRoutine[dayOfweek].classes;
+            let daysClasses = daysRoutine[dayOfWeek].classes;
             message.channel.send(`Day :  ${daysRoutine[dayOfWeek].dayString}`);
             if (daysRoutine[dayOfWeek].isOffDay)
                 message.channel.send("\tOff day");
@@ -154,7 +153,7 @@ client.on('message', message => {
                     message.channel.send(`\tTime Slot : ${daysClasses[j].startTime} - ${daysClasses[j].endTime}`);
                     message.channel.send(`\tPaper Code : ${daysClasses[j].paperCode}`);
                     message.channel.send("\t------------------------------------------------------------------");
-                }
+            }
         });
     }
 });
