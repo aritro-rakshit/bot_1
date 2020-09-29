@@ -122,7 +122,7 @@ client.on('message', message => {
                  .setTitle("HELP COMMAND")
                  .setImage(r.hits[Math.floor(Math.random() * r.hits.length)].largeImageURL))
      })
-        message.channel.send('Available commands: !AA, !RB, !SS, !JGD, !SD, !RANA, !SM, !KG, !AN, !DD, !CIA, !puppy, !moral');
+        message.channel.send('Available commands: !AA, !RB, !SS, !JGD, !SD, !RANA, !SM, !KG, !AN, !DD, !CIA, !puppy, !moral, !routine');
     }
     if (message.content === '!puppy'){
     pixabay.searchImages(key, 'puppy').then((r) => {
@@ -139,25 +139,22 @@ client.on('message', message => {
              .setImage(r.hits[Math.floor(Math.random() * r.hits.length)].largeImageURL))
  })
 }
-    if (message.content === '!routine full') {
+    if (message.content === '!routine') {
+        let dayOfWeek = (new Date()).getDay();
         fs.readFile('routine.json', (err, data) => {
             if (err) message.channel.send('Some unexpected error occured');
             let fullRoutine = JSON.parse(data);
             let daysRoutine = fullRoutine.byDay;
-            for (let i = 0; i < 7; i++) { 
-                let daysClasses = daysRoutine[i].classes;
-                message.channel.send(`Day :  ${daysRoutine[i].dayString}`);
-                if (daysRoutine[i].isOffDay) {
-                    message.channel.send("\tOff day");
-                    continue;
-                }
-                for (let j = 0; j < daysClasses.length; j++) {
+            let daysClasses = daysRoutine[dayOfweek].classes;
+            message.channel.send(`Day :  ${daysRoutine[dayOfWeek].dayString}`);
+            if (daysRoutine[dayOfWeek].isOffDay)
+                message.channel.send("\tOff day");
+            for (let j = 0; j < daysClasses.length; j++) {
                     message.channel.send(`\tProfessor Code : ${daysClasses[j].profCode}`);
                     message.channel.send(`\tTime Slot : ${daysClasses[j].startTime} - ${daysClasses[j].endTime}`);
                     message.channel.send(`\tPaper Code : ${daysClasses[j].paperCode}`);
                     message.channel.send("\t------------------------------------------------------------------");
                 }
-            }
         });
     }
 });

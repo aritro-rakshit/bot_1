@@ -1,5 +1,9 @@
 {
-    "byDay" : [
+    "byDay" : [{
+            "dayString" : "Sunday",
+            "isOffDay" : true,
+            "classes" : []
+        },
         {
             "dayString" : "Monday",
             "isOffDay" : false,
@@ -128,11 +132,6 @@
                         "endTime" : "02:40 AM",
                         "paperCode" : "CMSM4324"
                         }]
-        },
-        {
-            "dayString" : "Sunday",
-            "isOffDay" : true,
-            "classes" : []
         }
     ]
 }
