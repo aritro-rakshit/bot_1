@@ -12,8 +12,12 @@ client.once('ready', () => {
 client.login('NzU3ODE3MzQxMTk4MzM2MDgz.X2l6ZQ.eiEp4PFqdfkcE5cAyErav3879aE');
 
 client.on('message', message => {
+    if (!message.content.startsWith("!") || message.author.bot) return;
+
+	const args = message.content.slice(prefix.length).trim().split(/ +/);
+    const command = args.shift().toLowerCase();
     
-    if (message.content === '!sxc_helpline') {
+    if (command === 'sxc_helpline') {
         pixabay.searchImages(key, 'helpline').then((r) => {
              message.reply(new Discord.MessageEmbed()
                  .setTitle("HELP COMMAND")
@@ -21,14 +25,14 @@ client.on('message', message => {
      })
         message.channel.send('Available commands: !sxc_helpline, !routine, !puppy');
     }
-    if (message.content === '!puppy'){
+    if (command === 'puppy'){
     pixabay.searchImages(key, 'puppy').then((r) => {
          message.reply(new Discord.MessageEmbed()
              .setTitle("Here is a gift")
              .setImage(r.hits[Math.floor(Math.random() * r.hits.length)].largeImageURL))
  })
 }
-    if (message.content === '!routine') {
+    if (command === 'routine') {
         fs.readFile('routine.json', (err, data) => {
             if (err) message.channel.send('Some unexpected error occured');
             let dayOfWeek = (new Date()).getDay();
