@@ -35,7 +35,11 @@ client.on('message', message => {
     if (command === 'routine') {
         fs.readFile('routine.json', (err, data) => {
             if (err) message.channel.send('Some unexpected error occured');
-            let dayOfWeek = (new Date()).getDay();
+            let todaysDate = new Date();
+            let dayOfWeek = todaysDate.getUTCDay();
+            //If the time is past 6:30 PM UTC (equivalent to 00:00 AM IST), increment the day of week
+            if (todaysDate.getUTCHours()*60 + todaysDate.getUTCMinutes() > 1100)
+                dayOfWeek++;
             let fullRoutine = JSON.parse(data);
             let daysRoutine = fullRoutine.byDay;
             let daysClasses = daysRoutine[dayOfWeek].classes;
