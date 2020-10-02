@@ -43,15 +43,16 @@ client.on('message', message => {
             let fullRoutine = JSON.parse(data);
             let daysRoutine = fullRoutine.byDay;
             let daysClasses = daysRoutine[dayOfWeek].classes;
-            message.channel.send(`Day :  ${daysRoutine[dayOfWeek].dayString}`);
+            let msg = `Day :  ${daysRoutine[dayOfWeek].dayString}\n`;
             if (daysRoutine[dayOfWeek].isOffDay)
-                message.channel.send("\tOff day");
+                msg += `\tOff day\n`;
             for (let j = 0; j < daysClasses.length; j++) {
-                    message.channel.send(`\tProfessor Code : ${daysClasses[j].profCode}`);
-                    message.channel.send(`\tTime Slot : ${daysClasses[j].startTime} - ${daysClasses[j].endTime}`);
-                    message.channel.send(`\tPaper Code : ${daysClasses[j].paperCode}`);
-                    message.channel.send("\t------------------------------------------------------------------");
+                    msg += `\tProfessor Code : ${daysClasses[j].profCode}\n`;
+                    msg += `\tTime Slot : ${daysClasses[j].startTime} - ${daysClasses[j].endTime}\n`;
+                    msg += `\tPaper Code : ${daysClasses[j].paperCode}\n`;
+                    msg += `\t------------------------------------------------------------------`;
             }
+            message.channel.send(msg);
         });
     }
 });
