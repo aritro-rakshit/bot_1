@@ -50,7 +50,7 @@ client.on('message', message => {
                     msg += `\tProfessor Code : ${daysClasses[j].profCode}\n`;
                     msg += `\tTime Slot : ${daysClasses[j].startTime} - ${daysClasses[j].endTime}\n`;
                     msg += `\tPaper Code : ${daysClasses[j].paperCode}\n`;
-                    msg += `\t------------------------------------------------------------------`;
+                    msg += `\t------------------------------------------------------------------\n`;
             }
             message.channel.send(msg);
         });
