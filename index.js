@@ -55,7 +55,7 @@ client.on('message', message => {
             message.channel.send(msg);
         });
     }
-    if (command === 'routine monday') {
+    if (command === 'monday') {
             let dayOfWeek = 1;
             let fullRoutine = JSON.parse(data);
             let daysRoutine = fullRoutine.byDay;
