@@ -55,18 +55,144 @@ client.on('message', message => {
             message.channel.send(msg);
         });
     }
+    
+    if (command === 'sunday') {
+        fs.readFile('routine.json', (err, data) => {
+            if (err) message.channel.send('Some unexpected error occured');
+            let dayOfWeek = 0;
+            let fullRoutine = JSON.parse(data);
+            let daysRoutine = fullRoutine.byDay;
+            let daysClasses = daysRoutine[dayOfWeek].classes;
+            let msg = `Day :  ${daysRoutine[dayOfWeek].dayString}\n`;
+            if (daysRoutine[dayOfWeek].isOffDay)
+                msg += `\tOff day\n`;
+            for (let j = 0; j < daysClasses.length; j++) {
+                    msg += `\tProfessor Code : ${daysClasses[j].profCode}\n`;
+                    msg += `\tTime Slot : ${daysClasses[j].startTime} - ${daysClasses[j].endTime}\n`;
+                    msg += `\tPaper Code : ${daysClasses[j].paperCode}\n`;
+                    msg += `\t------------------------------------------------------------------\n`;
+            }
+            message.channel.send(msg);
+        });
+    }
+
     if (command === 'monday') {
+        fs.readFile('routine.json', (err, data) => {
+            if (err) message.channel.send('Some unexpected error occured');
             let dayOfWeek = 1;
             let fullRoutine = JSON.parse(data);
             let daysRoutine = fullRoutine.byDay;
             let daysClasses = daysRoutine[dayOfWeek].classes;
+            let msg = `Day :  ${daysRoutine[dayOfWeek].dayString}\n`;
             if (daysRoutine[dayOfWeek].isOffDay)
-            msg += `\tOff day\n`;
-        for (let j = 0; j < daysClasses.length; j++) {
-                msg += `\tProfessor Code : ${daysClasses[j].profCode}\n`;
-                msg += `\tTime Slot : ${daysClasses[j].startTime} - ${daysClasses[j].endTime}\n`;
-                msg += `\tPaper Code : ${daysClasses[j].paperCode}\n`;
-                msg += `\t------------------------------------------------------------------\n`;
-        }
+                msg += `\tOff day\n`;
+            for (let j = 0; j < daysClasses.length; j++) {
+                    msg += `\tProfessor Code : ${daysClasses[j].profCode}\n`;
+                    msg += `\tTime Slot : ${daysClasses[j].startTime} - ${daysClasses[j].endTime}\n`;
+                    msg += `\tPaper Code : ${daysClasses[j].paperCode}\n`;
+                    msg += `\t------------------------------------------------------------------\n`;
+            }
+            message.channel.send(msg);
+        });
+    }
+
+    if (command === 'tuesday') {
+        fs.readFile('routine.json', (err, data) => {
+            if (err) message.channel.send('Some unexpected error occured');
+            let dayOfWeek = 2;
+            let fullRoutine = JSON.parse(data);
+            let daysRoutine = fullRoutine.byDay;
+            let daysClasses = daysRoutine[dayOfWeek].classes;
+            let msg = `Day :  ${daysRoutine[dayOfWeek].dayString}\n`;
+            if (daysRoutine[dayOfWeek].isOffDay)
+                msg += `\tOff day\n`;
+            for (let j = 0; j < daysClasses.length; j++) {
+                    msg += `\tProfessor Code : ${daysClasses[j].profCode}\n`;
+                    msg += `\tTime Slot : ${daysClasses[j].startTime} - ${daysClasses[j].endTime}\n`;
+                    msg += `\tPaper Code : ${daysClasses[j].paperCode}\n`;
+                    msg += `\t------------------------------------------------------------------\n`;
+            }
+            message.channel.send(msg);
+        });
+    }
+
+    if (command === 'wednesday') {
+        fs.readFile('routine.json', (err, data) => {
+            if (err) message.channel.send('Some unexpected error occured');
+            let dayOfWeek = 3;
+            let fullRoutine = JSON.parse(data);
+            let daysRoutine = fullRoutine.byDay;
+            let daysClasses = daysRoutine[dayOfWeek].classes;
+            let msg = `Day :  ${daysRoutine[dayOfWeek].dayString}\n`;
+            if (daysRoutine[dayOfWeek].isOffDay)
+                msg += `\tOff day\n`;
+            for (let j = 0; j < daysClasses.length; j++) {
+                    msg += `\tProfessor Code : ${daysClasses[j].profCode}\n`;
+                    msg += `\tTime Slot : ${daysClasses[j].startTime} - ${daysClasses[j].endTime}\n`;
+                    msg += `\tPaper Code : ${daysClasses[j].paperCode}\n`;
+                    msg += `\t------------------------------------------------------------------\n`;
+            }
+            message.channel.send(msg);
+        });
+    }
+
+    if (command === 'thursday') {
+        fs.readFile('routine.json', (err, data) => {
+            if (err) message.channel.send('Some unexpected error occured');
+            let dayOfWeek = 4;
+            let fullRoutine = JSON.parse(data);
+            let daysRoutine = fullRoutine.byDay;
+            let daysClasses = daysRoutine[dayOfWeek].classes;
+            let msg = `Day :  ${daysRoutine[dayOfWeek].dayString}\n`;
+            if (daysRoutine[dayOfWeek].isOffDay)
+                msg += `\tOff day\n`;
+            for (let j = 0; j < daysClasses.length; j++) {
+                    msg += `\tProfessor Code : ${daysClasses[j].profCode}\n`;
+                    msg += `\tTime Slot : ${daysClasses[j].startTime} - ${daysClasses[j].endTime}\n`;
+                    msg += `\tPaper Code : ${daysClasses[j].paperCode}\n`;
+                    msg += `\t------------------------------------------------------------------\n`;
+            }
+            message.channel.send(msg);
+        });
+    }
+
+    if (command === 'friday') {
+        fs.readFile('routine.json', (err, data) => {
+            if (err) message.channel.send('Some unexpected error occured');
+            let dayOfWeek = 5;
+            let fullRoutine = JSON.parse(data);
+            let daysRoutine = fullRoutine.byDay;
+            let daysClasses = daysRoutine[dayOfWeek].classes;
+            let msg = `Day :  ${daysRoutine[dayOfWeek].dayString}\n`;
+            if (daysRoutine[dayOfWeek].isOffDay)
+                msg += `\tOff day\n`;
+            for (let j = 0; j < daysClasses.length; j++) {
+                    msg += `\tProfessor Code : ${daysClasses[j].profCode}\n`;
+                    msg += `\tTime Slot : ${daysClasses[j].startTime} - ${daysClasses[j].endTime}\n`;
+                    msg += `\tPaper Code : ${daysClasses[j].paperCode}\n`;
+                    msg += `\t------------------------------------------------------------------\n`;
+            }
+            message.channel.send(msg);
+        });
+    }
+
+    if (command === 'saturday') {
+        fs.readFile('routine.json', (err, data) => {
+            if (err) message.channel.send('Some unexpected error occured');
+            let dayOfWeek = 6;
+            let fullRoutine = JSON.parse(data);
+            let daysRoutine = fullRoutine.byDay;
+            let daysClasses = daysRoutine[dayOfWeek].classes;
+            let msg = `Day :  ${daysRoutine[dayOfWeek].dayString}\n`;
+            if (daysRoutine[dayOfWeek].isOffDay)
+                msg += `\tOff day\n`;
+            for (let j = 0; j < daysClasses.length; j++) {
+                    msg += `\tProfessor Code : ${daysClasses[j].profCode}\n`;
+                    msg += `\tTime Slot : ${daysClasses[j].startTime} - ${daysClasses[j].endTime}\n`;
+                    msg += `\tPaper Code : ${daysClasses[j].paperCode}\n`;
+                    msg += `\t------------------------------------------------------------------\n`;
+            }
+            message.channel.send(msg);
+        });
     }
 });
