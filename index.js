@@ -55,4 +55,18 @@ client.on('message', message => {
             message.channel.send(msg);
         });
     }
+    if (command === 'routine monday') {
+            let dayOfWeek = 1;
+            let fullRoutine = JSON.parse(data);
+            let daysRoutine = fullRoutine.byDay;
+            let daysClasses = daysRoutine[dayOfWeek].classes;
+            if (daysRoutine[dayOfWeek].isOffDay)
+            msg += `\tOff day\n`;
+        for (let j = 0; j < daysClasses.length; j++) {
+                msg += `\tProfessor Code : ${daysClasses[j].profCode}\n`;
+                msg += `\tTime Slot : ${daysClasses[j].startTime} - ${daysClasses[j].endTime}\n`;
+                msg += `\tPaper Code : ${daysClasses[j].paperCode}\n`;
+                msg += `\t------------------------------------------------------------------\n`;
+        }
+    }
 });
