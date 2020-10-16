@@ -23,7 +23,7 @@ client.on('message', message => {
                  .setTitle("HELP COMMAND")
                  .setImage(r.hits[Math.floor(Math.random() * r.hits.length)].largeImageURL))
      })
-        message.channel.send('Available commands: !sxc_helpline, !routine, !puppy');
+        message.channel.send('Available commands: !sxc_helpline, !routine, !puppy, !<day>');
     }
     if (command === 'puppy'){
     pixabay.searchImages(key, 'puppy').then((r) => {
